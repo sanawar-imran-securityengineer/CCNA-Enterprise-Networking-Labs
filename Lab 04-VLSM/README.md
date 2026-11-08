@@ -1,17 +1,24 @@
 # 🌐 VLSM Subnetting - Complete Implementation Guide
  
-<div align="center">
-![VLSM Banner](images/ai.png)
- 
-**Designing and Configuring Three Subnets (50, 25 and 10 Hosts) from 192.168.10.0/24**
- 
-[![Packet Tracer](https://img.shields.io/badge/Packet_Tracer-Lab_Tested-blue?style=for-the-badge&logo=cisco)](.)
-[![Subnets](https://img.shields.io/badge/Subnets-3_Configured-green?style=for-the-badge)](.)
-[![Status](https://img.shields.io/badge/Status-Complete-success?style=for-the-badge)](.)
- 
-[📖 Overview](#-overview) • [🧠 Concepts](#-vlsm-concepts) • [📐 Design](#-vlsm-design-step-by-step) • [🗺️ Topology](#️-network-topology) • [📋 IP Plan](#-ip-addressing-plan) • [⚙️ Configuration](#️-step-by-step-configuration) • [✅ Verification](#-verification) • [🛠️ Troubleshooting](#️-troubleshooting)
- 
-</div>
+<p align="center">
+  <img src="images/ai.png" alt="VLSM Banner" width="800">
+</p>
+<p align="center"><b>Designing and Configuring Three Subnets (50, 25 and 10 Hosts) from 192.168.10.0/24</b></p>
+<p align="center">
+  <img src="https://img.shields.io/badge/Packet_Tracer-Lab_Tested-blue?style=for-the-badge&logo=cisco" alt="Packet Tracer">
+  <img src="https://img.shields.io/badge/Subnets-3_Configured-green?style=for-the-badge" alt="Subnets">
+  <img src="https://img.shields.io/badge/Status-Complete-success?style=for-the-badge" alt="Status">
+</p>
+<p align="center">
+  <a href="#-overview">📖 Overview</a> •
+  <a href="#-vlsm-concepts">🧠 Concepts</a> •
+  <a href="#-vlsm-design-step-by-step">📐 Design</a> •
+  <a href="#️-network-topology">🗺️ Topology</a> •
+  <a href="#-ip-addressing-plan">📋 IP Plan</a> •
+  <a href="#️-step-by-step-configuration">⚙️ Configuration</a> •
+  <a href="#-verification">✅ Verification</a> •
+  <a href="#️-troubleshooting">🛠️ Troubleshooting</a>
+</p>
 ---
  
 ## 📖 Overview
@@ -471,14 +478,12 @@ ping 192.168.10.65
  
 ## 📞 Connect With Me
  
-<div align="center">
-[![Email](https://img.shields.io/badge/Email-your--email%40gmail.com-red?style=for-the-badge&logo=gmail)](mailto:your-email@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Sanawar_Imran-blue?style=for-the-badge&logo=linkedin)](https://www.linkedin.com/in/your-linkedin)
-[![GitHub](https://img.shields.io/badge/GitHub-your--username-black?style=for-the-badge&logo=github)](https://github.com/your-username)
- 
-**💬 Questions? Need Packet Tracer files? Feel free to reach out!**
- 
-</div>
+<p align="center">
+  <a href="mailto:your-email@gmail.com"><img src="https://img.shields.io/badge/Email-your--email%40gmail.com-red?style=for-the-badge&logo=gmail" alt="Email"></a>
+  <a href="https://www.linkedin.com/in/your-linkedin"><img src="https://img.shields.io/badge/LinkedIn-Sanawar_Imran-blue?style=for-the-badge&logo=linkedin" alt="LinkedIn"></a>
+  <a href="https://github.com/your-username"><img src="https://img.shields.io/badge/GitHub-your--username-black?style=for-the-badge&logo=github" alt="GitHub"></a>
+</p>
+<p align="center"><b>💬 Questions? Need Packet Tracer files? Feel free to reach out!</b></p>
 ---
  
 ## 📄 License
@@ -487,12 +492,8 @@ This project is created for **educational purposes** and is open-source.
  
 ---
  
-<div align="center">
-### ⭐ If you found this helpful, please give it a star!
+<h3 align="center">⭐ If you found this helpful, please give it a star!</h3>
  
-**Made with 💙 by SANAWAR IMRAN**
- 
-*Last Updated: November 2026*
- 
-</div>
+<p align="center"><b>Made with 💙 by SANAWAR IMRAN</b></p>
+<p align="center"><i>Last Updated: November 2026</i></p>
  
