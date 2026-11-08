@@ -1,5 +1,7 @@
 # 🌐 IPv4 Subnetting – Complete Networking Guide & Practical Lab
-
+<p align="center">
+  <img src="images/ipv4-subnetting-banner.png" width="100%" alt="IPv4 Subnetting Banner">
+</p>
 <p align="center">
   <img src="https://img.shields.io/badge/Networking-Subnetting-blue?style=for-the-badge" alt="Networking Subnetting">
   <img src="https://img.shields.io/badge/IPv4-CCNA-green?style=for-the-badge" alt="IPv4 CCNA">
