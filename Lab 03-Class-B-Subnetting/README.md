@@ -1,4 +1,4 @@
-::: {align="center"}
+
 # Class B Subnetting (50 Subnets)
 
 ### Static Routing with 3 Routers and 3 Switches
@@ -11,7 +11,6 @@
 [Topology](#-network-topology) · [Configuration](#-configuration) ·
 [Verification](#-verification) ·
 [Troubleshooting](#-problems-found-and-corrections)
-:::
 
 ------------------------------------------------------------------------
 
