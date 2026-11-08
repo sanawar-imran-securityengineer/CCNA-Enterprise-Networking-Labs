@@ -3,7 +3,6 @@
   <img src="images/IPv4%20Subnetting%20Networking%20Guide.png"
        width="100%"
        alt="IPv4 Subnetting Networking Guide">
-</p>
   <img src="https://img.shields.io/badge/Networking-Subnetting-blue?style=for-the-badge" alt="Networking Subnetting">
   <img src="https://img.shields.io/badge/IPv4-CCNA-green?style=for-the-badge" alt="IPv4 CCNA">
   <img src="https://img.shields.io/badge/Cisco-Packet%20Tracer-informational?style=for-the-badge" alt="Cisco Packet Tracer">
