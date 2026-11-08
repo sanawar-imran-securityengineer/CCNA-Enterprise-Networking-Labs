@@ -3,10 +3,6 @@
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:0ea5e9,50:6366f1,100:ec4899&height=240&section=header&text=CCNA%20Enterprise%20Networks&fontSize=52&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Complete%20Lab%20and%20Theory%20Repository&descAlignY=58&descSize=22" width="100%" alt="CCNA Enterprise Networks">
-</p>
-
-<p align="center">
   <a href="https://github.com/sanawar-imran-securityengineer">
     <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1200&color=38BDF8&center=true&vCenter=true&width=820&lines=Switching+%7C+Routing+%7C+Security+%7C+Wireless;VLAN+%C2%B7+STP+%C2%B7+OSPF+%C2%B7+NAT+%C2%B7+ACL+%C2%B7+DHCP+%C2%B7+DNS;From+Packet+Tracer+labs+to+real+enterprise+networks;Built+by+Sanawar+Imran" alt="Typing animation">
   </a>
