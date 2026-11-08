@@ -19,7 +19,8 @@
   <a href="#-verification">✅ Verification</a> •
   <a href="#️-troubleshooting">🛠️ Troubleshooting</a>
 </p>
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📖 Overview
  
@@ -47,13 +48,25 @@ A single network block, **192.168.10.0/24**, must be divided into three subnets 
 | **Devices** | Router R1 and switches S1 to S3 (one switch per subnet) |
 | **Deliverables** | VLSM design, IP assignment, router and switch configuration, ping verification between different subnets |
  
+### 🎨 Subnets at a Glance
+ 
+<p align="center">
+  <img src="https://img.shields.io/badge/Subnet_A-192.168.10.0%2F26-2563eb?style=for-the-badge" alt="A">
+  <img src="https://img.shields.io/badge/Subnet_B-192.168.10.64%2F27-16a34a?style=for-the-badge" alt="B">
+  <img src="https://img.shields.io/badge/Subnet_C-192.168.10.96%2F28-9333ea?style=for-the-badge" alt="C">
+</p>
+<p align="center">
+  <img src="https://img.shields.io/badge/50_hosts-62_usable-2563eb?style=flat-square" alt="">
+  <img src="https://img.shields.io/badge/25_hosts-30_usable-16a34a?style=flat-square" alt="">
+  <img src="https://img.shields.io/badge/10_hosts-14_usable-9333ea?style=flat-square" alt="">
+</p>
 ### 🎯 What You Will Do:
 - ✅ Choose the right mask for each subnet from its host count
 - ✅ Allocate the address blocks from largest to smallest without overlap
 - ✅ Assign addresses to the router, switches and PCs
 - ✅ Configure the router and switches
 - ✅ Test connectivity inside and between subnets
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📚 Table of Contents
  
@@ -65,7 +78,7 @@ A single network block, **192.168.10.0/24**, must be divided into three subnets 
 - [✅ Verification](#-verification)
 - [🛠️ Troubleshooting](#️-troubleshooting)
 - [📝 Summary and Checklist](#-summary-and-checklist)
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 🧠 VLSM Concepts
  
@@ -101,7 +114,8 @@ Result: very little waste ✅
 | /28 | 255.255.255.240 | 4 | 16 | 14 | **C (10)** |
 | /29 | 255.255.255.248 | 3 | 8 | 6 | |
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📐 VLSM Design, Step by Step
  
@@ -109,9 +123,9 @@ Result: very little waste ✅
  
 | Subnet | Hosts needed | Smallest 2^h - 2 that fits | Host bits (h) | Prefix |
 |--------|--------------|----------------------------|---------------|--------|
-| **A** | 50 | 2^6 - 2 = 62 | 6 | /26 |
-| **B** | 25 | 2^5 - 2 = 30 | 5 | /27 |
-| **C** | 10 | 2^4 - 2 = 14 | 4 | /28 |
+| 🟦 **A** | 50 | 2^6 - 2 = 62 | 6 | /26 |
+| 🟩 **B** | 25 | 2^5 - 2 = 30 | 5 | /27 |
+| 🟪 **C** | 10 | 2^4 - 2 = 14 | 4 | /28 |
  
 **Why not smaller?**
 ```
@@ -120,15 +134,16 @@ Result: very little waste ✅
 /29 gives only 6 hosts   → cannot hold 10
 ```
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### Step 2: Allocate the Blocks, Largest First
  
 | Subnet | Network address | Block size | Block runs from / to | Next free address |
 |--------|-----------------|------------|----------------------|-------------------|
-| **A** | 192.168.10.0/26 | 64 | .0 to .63 | .64 |
-| **B** | 192.168.10.64/27 | 32 | .64 to .95 | .96 |
-| **C** | 192.168.10.96/28 | 16 | .96 to .111 | .112 |
+| 🟦 **A** | 192.168.10.0/26 | 64 | .0 to .63 | .64 |
+| 🟩 **B** | 192.168.10.64/27 | 32 | .64 to .95 | .96 |
+| 🟪 **C** | 192.168.10.96/28 | 16 | .96 to .111 | .112 |
  
 ```
 Subnet A starts at .0   → uses 64 → ends at .63
@@ -136,17 +151,19 @@ Subnet B starts at .64  → uses 32 → ends at .95
 Subnet C starts at .96  → uses 16 → ends at .111
 ```
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### Step 3: Complete Subnet Table
  
 | Subnet | Network | Mask | First host | Last host | Broadcast | Usable |
 |--------|---------|------|------------|-----------|-----------|--------|
-| **A** | 192.168.10.0/26 | 255.255.255.192 | .1 | .62 | .63 | 62 |
-| **B** | 192.168.10.64/27 | 255.255.255.224 | .65 | .94 | .95 | 30 |
-| **C** | 192.168.10.96/28 | 255.255.255.240 | .97 | .110 | .111 | 14 |
+| 🟦 **A** | 192.168.10.0/26 | 255.255.255.192 | .1 | .62 | .63 | 62 |
+| 🟩 **B** | 192.168.10.64/27 | 255.255.255.224 | .65 | .94 | .95 | 30 |
+| 🟪 **C** | 192.168.10.96/28 | 255.255.255.240 | .97 | .110 | .111 | 14 |
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### 🧮 Worked Example: Subnet C (/28)
  
@@ -160,7 +177,8 @@ Need = 10     → 4 addresses spare
 Wildcard mask = 255 - 240 = 15 → 0.0.0.15
 ```
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### Step 4: Check the Efficiency
  
@@ -170,9 +188,11 @@ Wildcard mask = 255 - 240 = 15 → 0.0.0.15
 | **Addresses left free in the /24** | 144 (.112 to .255) | 64 (one more /26) |
 | **Wasted inside subnets** | (62-50)+(30-25)+(14-10) = **21** | 12 + 37 + 52 = **101** |
  
-**Result:** ✅ VLSM wastes about 5 times fewer addresses
+> [!IMPORTANT]
+> **Result:** VLSM wastes about 5 times fewer addresses (21 vs 101).
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 🗺️ Network Topology
  
@@ -182,6 +202,27 @@ One router connects three switches, one per subnet. Five PCs are connected to ea
   <img src="images/Screenshot_1.png" alt="Packet Tracer Topology" width="700">
 </p>
 <p align="center"><i>Figure 1: Packet Tracer topology with the VLSM addresses</i></p>
+**Logical view:**
+ 
+```mermaid
+graph TD
+    R1(("R1 Router"))
+    R1 -->|"Fa0/0 - .10"| S1["S1 - Subnet A<br/>192.168.10.0/26"]
+    R1 -->|"Fa0/1 - .70"| S2["S2 - Subnet B<br/>192.168.10.64/27"]
+    R1 -->|"Fa1/0 - .110"| S3["S3 - Subnet C<br/>192.168.10.96/28"]
+    S1 --- PA["PC0 - PC4"]
+    S2 --- PB["PC5 - PC9"]
+    S3 --- PC["PC10 - PC14"]
+    classDef r fill:#fde68a,stroke:#d97706,color:#000
+    classDef a fill:#dbeafe,stroke:#2563eb,color:#000
+    classDef b fill:#dcfce7,stroke:#16a34a,color:#000
+    classDef c fill:#f3e8ff,stroke:#9333ea,color:#000
+    class R1 r
+    class S1,PA a
+    class S2,PB b
+    class S3,PC c
+```
+ 
 ### Devices and Cabling
  
 | Device | Subnet | Router interface | Connected PCs |
@@ -190,12 +231,14 @@ One router connects three switches, one per subnet. Five PCs are connected to ea
 | **Switch S2 (Switch1)** | B | FastEthernet0/1 | PC5 to PC9 |
 | **Switch S3 (Switch2)** | C | FastEthernet1/0 | PC10 to PC14 |
  
-> 📝 **Notes on the picture:**
+> [!NOTE]
+> **Notes on the picture:**
 > 1. The screenshot names the router "Router2" and the switches "Switch0 to Switch2". This guide uses **R1** and **S1 to S3**; rename the devices in Packet Tracer to match.
 > 2. A 2811 router has two built-in ports, so the third interface needs an added module. Use your own port names if they differ.
 > 3. Every PC must have a **unique** address (Subnet C uses .97, .98, .99, .100 and .101 for PC10 to PC14).
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📋 IP Addressing Plan
  
@@ -225,9 +268,11 @@ The addresses shown beside each switch in the topology (**.10**, **.70** and **.
 | **PC13** | C | 192.168.10.100 | 255.255.255.240 | 192.168.10.110 |
 | **PC14** | C | 192.168.10.101 | 255.255.255.240 | 192.168.10.110 |
  
-✅ Every address is inside its subnet's usable range, is not a network or broadcast address, and is used only once.
+> [!IMPORTANT]
+> Every address is inside its subnet's usable range, is not a network or broadcast address, and is used only once.
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## ⚙️ Step-by-Step Configuration
  
@@ -237,7 +282,7 @@ The addresses shown beside each switch in the topology (**.10**, **.70** and **.
 2. Connect S1 to R1 Fa0/0, S2 to Fa0/1 and S3 to Fa1/0 with **straight-through** cables
 3. Connect PC0 to PC4 to S1, PC5 to PC9 to S2, and PC10 to PC14 to S3
 4. Rename the devices R1, S1, S2 and S3, and add Subnet A, B and C labels
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### 6.2 Configure Router R1
  
@@ -273,9 +318,11 @@ R1# write memory
   <img src="images/Screenshot_2.png" alt="Router R1 Configuration" width="650">
 </p>
 <p align="center"><i>Figure 2: Router R1 configuration</i></p>
-💡 All three subnets are **directly connected** to R1, so it adds them to the routing table automatically. No static routes or routing protocol are needed.
+> [!TIP]
+> All three subnets are **directly connected** to R1, so it adds them to the routing table automatically. No static routes or routing protocol are needed.
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### 6.3 Configure the Switches
  
@@ -304,10 +351,11 @@ S1# write memory
  
 | Switch | Hostname | VLAN 1 address and mask | Default gateway |
 |--------|----------|-------------------------|-----------------|
-| **Subnet B** | S2 | 192.168.10.80 255.255.255.224 | 192.168.10.70 |
-| **Subnet C** | S3 | 192.168.10.105 255.255.255.240 | 192.168.10.110 |
+| 🟩 **Subnet B** | S2 | 192.168.10.80 255.255.255.224 | 192.168.10.70 |
+| 🟪 **Subnet C** | S3 | 192.168.10.105 255.255.255.240 | 192.168.10.110 |
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### 6.4 Configure the PCs
  
@@ -323,9 +371,11 @@ S1# write memory
 | **Subnet Mask** | 255.255.255.224 |
 | **Default Gateway** | 192.168.10.70 |
  
-⚠️ **Mask warning:** Packet Tracer fills in `255.255.255.0` automatically. Change it to the subnet's own mask (.192, .224 or .240). A wrong /24 mask makes the PC think other subnets are local, and inter-subnet pings fail.
+> [!WARNING]
+> **Mask warning:** Packet Tracer fills in `255.255.255.0` automatically. Change it to the subnet's own mask (.192, .224 or .240). A wrong /24 mask makes the PC think other subnets are local, and inter-subnet pings fail.
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## ✅ Verification
  
@@ -351,7 +401,8 @@ S1# show ip interface brief
 ✓ On each switch, Vlan1 shows its management address
 ```
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### 7.2 Ping Test Plan
  
@@ -364,7 +415,8 @@ S1# show ip interface brief
 | 5 | PC5 (B) | 192.168.10.100 (PC13, C) | Inter-subnet | Success, TTL 127 |
 | 6 | PC0 (A) | 192.168.10.20 (S1) | Switch | Success |
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ### Results - Ping Test
  
@@ -384,9 +436,11 @@ TTL = 128 → packet stayed inside the subnet (did not cross the router)
  
 **Result:** ✅ Same-subnet communication works
  
-💡 For inter-subnet pings (tests 3 to 5) the TTL is **127** because the packet crossed R1. The first ping may show one "Request timed out" while ARP resolves; ping again for 4 of 4.
+> [!TIP]
+> For inter-subnet pings (tests 3 to 5) the TTL is **127** because the packet crossed R1. The first ping may show one "Request timed out" while ARP resolves; ping again for 4 of 4.
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 🛠️ Troubleshooting
  
@@ -400,7 +454,8 @@ TTL = 128 → packet stayed inside the subnet (did not cross the router)
 | Switch cannot be pinged from another subnet | No default gateway on the switch | Add `ip default-gateway` on the switch |
 | Only the first ping fails | ARP delay | Normal; ping again |
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📝 Summary and Checklist
  
@@ -408,9 +463,9 @@ The block **192.168.10.0/24** was divided with VLSM into:
  
 | Subnet | Network / prefix | Mask | Usable range | Broadcast |
 |--------|------------------|------|--------------|-----------|
-| **A** (50 hosts) | 192.168.10.0/26 | 255.255.255.192 | .1 to .62 | 192.168.10.63 |
-| **B** (25 hosts) | 192.168.10.64/27 | 255.255.255.224 | .65 to .94 | 192.168.10.95 |
-| **C** (10 hosts) | 192.168.10.96/28 | 255.255.255.240 | .97 to .110 | 192.168.10.111 |
+| 🟦 **A** (50 hosts) | 192.168.10.0/26 | 255.255.255.192 | .1 to .62 | 192.168.10.63 |
+| 🟩 **B** (25 hosts) | 192.168.10.64/27 | 255.255.255.224 | .65 to .94 | 192.168.10.95 |
+| 🟪 **C** (10 hosts) | 192.168.10.96/28 | 255.255.255.240 | .97 to .110 | 192.168.10.111 |
  
 Router R1 connects the subnets, and ping tests prove communication.
  
@@ -423,7 +478,7 @@ Router R1 connects the subnets, and ping tests prove communication.
 - [x] Every PC has a unique address, the right mask and the right gateway
 - [x] Same-subnet and different-subnet pings succeed
 - [x] Configuration saved with `write memory`
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📝 Quick Reference
  
@@ -445,7 +500,8 @@ show running-config
 ping 192.168.10.65
 ```
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 🎓 What I Learned
  
@@ -457,7 +513,8 @@ ping 192.168.10.65
 ✅ Setting the correct mask and gateway on PCs  
 ✅ Verifying with `show` commands and same-subnet / inter-subnet pings  
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 🚀 How to Use This Repository
  
@@ -474,7 +531,7 @@ ping 192.168.10.65
    - Change the host counts (for example 100, 40 and 12)
    - Redo the allocation largest first
    - Rebuild and test in Packet Tracer
----
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📞 Connect With Me
  
@@ -484,13 +541,15 @@ ping 192.168.10.65
   <a href="https://github.com/your-username"><img src="https://img.shields.io/badge/GitHub-your--username-black?style=for-the-badge&logo=github" alt="GitHub"></a>
 </p>
 <p align="center"><b>💬 Questions? Need Packet Tracer files? Feel free to reach out!</b></p>
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 ## 📄 License
  
 This project is created for **educational purposes** and is open-source.
  
----
+ 
+<img src="https://capsule-render.vercel.app/api?type=rect&color=gradient&customColorList=6,11,20&height=4&section=header" width="100%" alt="divider">
  
 <h3 align="center">⭐ If you found this helpful, please give it a star!</h3>
  
