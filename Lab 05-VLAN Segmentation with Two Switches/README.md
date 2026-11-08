@@ -76,28 +76,6 @@ Three PCs connect to each switch, and the two switches are joined by a trunk on 
 
 <p align="center"><i>Figure 1: Network topology in Cisco Packet Tracer</i></p>
 
-**Logical view:**
-
-```mermaid
-graph LR
-    subgraph SW1["Switch 1 (Switch0)"]
-        A1["PC0<br/>192.168.1.10<br/>VLAN 10"]
-        A2["PC1<br/>192.168.1.20<br/>VLAN 20"]
-        A3["PC2<br/>192.168.1.30<br/>VLAN 30"]
-    end
-    subgraph SW2["Switch 2 (Switch0(1))"]
-        B1["PC3<br/>192.168.1.40<br/>VLAN 20"]
-        B2["PC4<br/>192.168.1.50<br/>VLAN 30"]
-        B3["PC5<br/>192.168.1.60<br/>VLAN 10"]
-    end
-    SW1 ===|"Trunk Fa0/24"| SW2
-    classDef v10 fill:#bbf7d0,stroke:#16a34a,color:#000
-    classDef v20 fill:#fef08a,stroke:#ca8a04,color:#000
-    classDef v30 fill:#bfdbfe,stroke:#2563eb,color:#000
-    class A1,B3 v10
-    class A2,B1 v20
-    class A3,B2 v30
-```
 
 ### Cabling Plan
 
