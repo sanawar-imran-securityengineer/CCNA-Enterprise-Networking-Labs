@@ -62,24 +62,6 @@ Three LANs are connected through three routers, and the routers learn each other
 
 <p align="center"><i>Figure 1: Designed network in Packet Tracer</i></p>
 
-**Logical view** (arrows show RIP updates between neighbours):
-
-```mermaid
-graph LR
-    R0(("R0")) <-->|"RIP updates<br/>192.168.5.0/24"| R1(("R1"))
-    R1 <-->|"RIP updates<br/>192.168.4.0/24"| R2(("R2"))
-    R0 --- S0["S0 - LAN1<br/>192.168.1.0/24<br/>PC0, PC1"]
-    R1 --- S1["S1 - LAN2<br/>192.168.2.0/24<br/>PC2, PC3"]
-    R2 --- S2["S2 - LAN3<br/>192.168.3.0/24<br/>PC4, PC5"]
-    classDef r fill:#e5e7eb,stroke:#374151,color:#000
-    classDef l1 fill:#e9d5ff,stroke:#7c3aed,color:#000
-    classDef l2 fill:#bfdbfe,stroke:#2563eb,color:#000
-    classDef l3 fill:#bbf7d0,stroke:#16a34a,color:#000
-    class R0,R1,R2 r
-    class S0 l1
-    class S1 l2
-    class S2 l3
-```
 
 > [!NOTE]
 > The lab sheet calls the right-hand router **Router2**, but Packet Tracer named it **Router3** in the screenshot. They are the same device. This guide uses **R0, R1, R2** (left, middle, right) and **S0, S1, S2** for the switches.
