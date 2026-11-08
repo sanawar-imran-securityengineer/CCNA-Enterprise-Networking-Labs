@@ -1,8 +1,9 @@
 # 🌐 IPv4 Subnetting – Complete Networking Guide & Practical Lab
 <p align="center">
-  <img src="images/ipv4-subnetting-banner.png" width="100%" alt="IPv4 Subnetting Banner">
+  <img src="images/IPv4%20Subnetting%20Networking%20Guide.png"
+       width="100%"
+       alt="IPv4 Subnetting Networking Guide">
 </p>
-<p align="center">
   <img src="https://img.shields.io/badge/Networking-Subnetting-blue?style=for-the-badge" alt="Networking Subnetting">
   <img src="https://img.shields.io/badge/IPv4-CCNA-green?style=for-the-badge" alt="IPv4 CCNA">
   <img src="https://img.shields.io/badge/Cisco-Packet%20Tracer-informational?style=for-the-badge" alt="Cisco Packet Tracer">
